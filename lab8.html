@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>"Yaroslav"</title>
+</head>
+<body>
+	</p>"Test"<p>
+	<div id="answer">
+		
+	</div>
+	<script type="text/javascript">
+		function check(arr) {
+		  let seqGrow = 0;
+		  for (let i = 1; i < arr.length; i++) {
+		    const pairGrow = Math.sign(arr[i] - arr[i - 1]);
+		    if (pairGrow === 0) {
+		      continue;
+		    }
+		    seqGrow = seqGrow || pairGrow;
+		    if (pairGrow !== seqGrow) {
+		      return false;
+		    }
+		  }
+		  return true;
+		}
+		function createArr(){
+			let arr = [];
+			arr.length = 5
+			for(let i = 0; i < arr.length; i++){
+				arr[i] = (Math.round(Math.random(0, 1) * 10))
+			}
+			document.getElementById('answer').innerHTML += `[${arr}] = `
+			document.getElementById('answer').innerHTML += `${check(arr)} <br>`
+		}
+		createArr();
+		createArr();
+		createArr();
+		createArr();
+		createArr();
+		createArr();
+	</script>
+</body>
+</html>
+
+
+
+
